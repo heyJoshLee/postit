@@ -12,6 +12,11 @@
   <%= @post.description %>
 </p>
 
+<%= link_to "Edit", edit_post_path(@post) %>
+<br>
+
+<hr>
+
 <% @post.comments.each do |comment|%>
   <%=comment.body %>
   <br>
