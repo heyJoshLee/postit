@@ -8,9 +8,9 @@
 
 <%= render 'shared/content_title', title: @post.title %>
 
-<p>
+<div class='light-gray-background'>
   <%= @post.description %>
-</p>
+</div><br>
 
 <%= link_to "Edit", edit_post_path(@post) %>
 <br>
