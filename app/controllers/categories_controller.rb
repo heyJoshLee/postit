@@ -16,6 +16,11 @@ class CategoriesController < ActionController::Base
 
   def create
     @category = Category.new(post_params)
+    if @category.save
+      redirect_to categories_path
+    else
+      render :new
+    end
   
   end
 
