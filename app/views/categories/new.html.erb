@@ -1,13 +1,6 @@
 <h1> New Category </h1>
 
-<% if @category.errors.any? %>
-<div clas='alert' >
-<%  @category.errors.full_messages.each do |message| %>
-  <%= message %>
-
-  <% end %>
-  </div>
-<% end %>
+<%= render "shared/errors", object: @category %>
 
 
 <%= form_for @category do |f| %>
