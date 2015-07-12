@@ -4,6 +4,11 @@ class CategoriesController < ActionController::Base
     @categories = Category.all
   end
 
+  def show 
+    @category = Category.find(params[:id])
+    @posts = @category.posts
+  end
+
 
   def new
     @category = Category.new
@@ -11,8 +16,7 @@ class CategoriesController < ActionController::Base
 
   def create
     @category = Category.new(post_params)
-    
-
+  
   end
 
 
