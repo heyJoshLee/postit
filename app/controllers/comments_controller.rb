@@ -1,5 +1,9 @@
 class CommentsController < ApplicationController 
 
+  def show
+    @comment = Comment.find(params[:id])
+  end
+
   def create
     @user = User.first ## Need to change this later
     @post = Post.find(params[:post_id])
