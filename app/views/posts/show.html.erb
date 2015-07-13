@@ -17,6 +17,20 @@
 
 <hr>
 
+
+<%= form_for [@post, @comment] do |f| %>
+  <%= f.label :body %>
+  <%= f.text_area :body %>
+  <br>
+  <%= f.submit "Add Comment" %>
+
+<% end %>
+<br>
+<br>
+<br>
+<br>
+
+
 <% @post.comments.each do |comment|%>
   <%=comment.body %>
   <br>
