@@ -1,1 +1,11 @@
 <h1> Log in </h1>
+
+<%= form_tag %>
+
+<%= label_tag(:username, "Username") %>
+<%= text_field_tag(:username) %>
+
+<%= label_tag(:password, "Password") %>
+<%= text_field_tag(:password) %>
+<br>
+<%= submit_tag("Log in") %>
