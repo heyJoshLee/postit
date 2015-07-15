@@ -1,0 +1,15 @@
+<h2> Register for a new account! </h2>
+
+<%= form_for @user do |f| %>
+<%= render '/shared/errors', object: @user %>
+<%= f.label :username, "Username" %>
+<%= f.text_field :username %>
+
+<%= f.label :password, "Password" %>
+<%= f.password_field :password %>
+<br>
+<%= f.submit "Register" %>
+
+
+
+<% end %>

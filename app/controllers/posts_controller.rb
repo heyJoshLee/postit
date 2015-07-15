@@ -1,7 +1,8 @@
 class PostsController < ApplicationController
 
   before_action :set_post, only: [:show, :edit, :update]
-  
+  before_action :logged_in?, except: [:index, :show]
+
   def index
     @posts = Post.all
   end
@@ -11,6 +12,7 @@ class PostsController < ApplicationController
   end
 
   def new
+    redirect_to root_path unless logged_in?
     @post = Post.new    
   end
 
