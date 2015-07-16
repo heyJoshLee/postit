@@ -13,13 +13,14 @@
 
 <hr>
 
+<% if logged_in? %>
+  <%= form_for [@post, @comment] do |f| %>
+    <%= f.label :body %>
+    <%= f.text_area :body %>
+    <br>
+    <%= f.submit "Add Comment" %>
 
-<%= form_for [@post, @comment] do |f| %>
-  <%= f.label :body %>
-  <%= f.text_area :body %>
-  <br>
-  <%= f.submit "Add Comment" %>
-
+  <% end %>
 <% end %>
 <br>
 <br>

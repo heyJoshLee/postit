@@ -10,7 +10,9 @@
   </p>
   <span>
     <%= link_to("#{post.comments.size} comments", post_path(post)) %>
-    <p><%= link_to "edit", edit_post_path(post) %></p>
+    <% if logged_in? && current_user.username == post.creator.username %>
+      <p><%= link_to "edit", edit_post_path(post) %></p>
+    <% end %>
   </span>
   </div>
 </div>
