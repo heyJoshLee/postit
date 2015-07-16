@@ -1,1 +1,16 @@
-<%= @user.name %>
+<%= @user.username %> 's profile
+
+
+<% if @user.created_at %>
+  <p>User since <%= display_datetime(@user.created_at) %></p>
+
+<% end %>
+<br>
+
+<h2> All posts </h2>
+
+<% @user.posts.each do |post| %>
+
+ <p><%= link_to post.title, post_path(post) %></p>
+  
+<% end %>
