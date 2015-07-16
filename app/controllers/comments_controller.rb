@@ -5,7 +5,7 @@ class CommentsController < ApplicationController
   end
 
   def create
-    @user = User.first ## Need to change this later
+    @user = User.find(session[:user_id]) ## Need to change this later
     @post = Post.find(params[:post_id])
     @comment = @post.comments.build(params.require(:comment).permit!)
     @comment.user = @user
