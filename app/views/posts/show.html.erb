@@ -8,8 +8,10 @@
   <%= @post.description %>
 </div><br>
 
-<%= link_to "Edit", edit_post_path(@post) %>
+<% if logged_in? && @post.creator.username == current_user.username %>
+  <%= link_to "Edit", edit_post_path(@post) %>
 <br>
+<% end %>
 
 <hr>
 
