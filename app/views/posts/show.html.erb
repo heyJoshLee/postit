@@ -31,13 +31,6 @@
 
 
 
-<% @post.comments.each do |comment|%>
-  <%=comment.body %>
-  <br>
-  <small>by <%=comment.user.username %></small>
-  <br>
-  <br>
-
-<% end %>
+<%= render 'comments/comments' %>
 
 <hr>

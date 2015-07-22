@@ -1,0 +1,8 @@
+<% show_post ||= false %>
+
+<% @comments.each do |comment| %>
+
+<%= comment.body %>
+<p class="quiet"> by <%= comment.user.username %> </p>
+
+<% end %>
