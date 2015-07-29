@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-  
+
   def new
     if logged_in? 
       flash[:error] = "You are already logged in"

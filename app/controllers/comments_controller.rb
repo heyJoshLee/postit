@@ -9,7 +9,7 @@ class CommentsController < ApplicationController
 
   def create
     @user = User.find(session[:user_id]) ## Need to change this later
-    @post = Post.find(params[:post_id])
+    @post = Post.find_by slug: (params[:post_id])
     @comment = @post.comments.build(params.require(:comment).permit!)
     @comment.user = @user
 
