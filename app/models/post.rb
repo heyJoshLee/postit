@@ -30,7 +30,6 @@ class Post < ActiveRecord::Base
 
   def to_param
     self.slug
-    
   end
 
   def generate_slug!

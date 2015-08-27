@@ -3,6 +3,7 @@ class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :vote]
   before_action :logged_in?, except: [:index, :show]
   before_action :require_user, except: [:index, :show]
+  
   def index
     @posts = Post.all.sort_by{|x| x.total_votes}.reverse
   end
@@ -25,21 +26,18 @@ class PostsController < ApplicationController
     else
       render :new
     end
-
   end
 
   def edit
   end 
 
   def update
-
     if @post.update(post_params)
       flash[:notice] = "Post updated"
       redirect_to posts_path
     else
       render :edit
     end
-
   end
 
   def vote
@@ -54,7 +52,7 @@ class PostsController < ApplicationController
         end
           redirect_to :back
       end
-      format.js 
+      format.js
     end
   end
 
@@ -67,7 +65,7 @@ class PostsController < ApplicationController
   end
 
   def set_post
-      @post = Post.find_by slug: params[:id]
+    @post = Post.find_by(slug: params[:id])
   end
 
 
