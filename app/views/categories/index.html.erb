@@ -1,4 +1,4 @@
-<% if logged_in? %>
+<% if logged_in? && current_user.admin?%>
 
   <%= link_to new_category_path do  %>
   <div class="btn btn-success">Add Category</div>
